@@ -60,11 +60,19 @@
             <from uri="websphereMQ:queue:DEV.QUEUE.2?concurrentConsumers=5"/>
             <inOnly uri="amazonMQ:queue:DEV.QUEUE.2?preserveMessageQos=true"/>
     </route>
-	       <route id="websphereMQ-to-amazonMQ3">
+    <!--	       <route id="websphereMQ-to-amazonMQ3">
             <description>Camel Route from websphereMQ3 to amazonMQ3</description>
             <from uri="websphereMQ:queue:DEV.QUEUE.3?concurrentConsumers=5"/>
             <inOnly uri="amazonMQ:queue:DEV.QUEUE.3?preserveMessageQos=true"/>
         </route>
+  -->
+	<!-- activeMQ to IBM MQ -->
+               <route id="amazonMQ3-to-ActiveMQ">
+            <description>Camel Route from amazonMQ3 to IBMMQ</description>
+            <from uri="amazonMQ:queue:DEV.QUEUE.3?preserveMessageQos=true"/>
+            <inOnly uri="websphereMQ:queue:DEV.QUEUE.3?concurrentConsumers=5"/>
+        </route>
+
 
     </camelContext>
 </beans>

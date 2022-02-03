@@ -1,0 +1,31 @@
+// null 1.2.0.RELEASE log opened at 2022-02-03 03:04:02
+help
+// null 1.2.0.RELEASE log opened at 2022-02-03 03:06:10
+connect --broker my-aws-broker
+// AmazonMQ CLI 1.2.0.RELEASE log opened at 2022-02-03 05:57:02
+ connect --broker my-aws-broker
+list-queues
+// AmazonMQ CLI 1.2.0.RELEASE log opened at 2022-02-03 05:58:06
+help
+ connect --broker my-aws-broker
+send-message --body "Hello team" --queue  DEV.QUEUE.1
+browse-messages --queue  DEV.QUEUE.1
+// AmazonMQ CLI 1.2.0.RELEASE log opened at 2022-02-03 06:04:34
+ connect --broker my-aws-broker
+browse-messages --queue  DEV.QUEUE.1  --regex <body>
+browse-messages --queue  DEV.QUEUE.1  --regex <body>
+browse-messages --queue  DEV.QUEUE.1  --regex body
+browse-messages --queue  DEV.QUEUE.1  --regex jms-message
+browse-messages --queue  DEV.QUEUE.1  
+// [failed] browse-messages --queue  DEV.QUEUE.1  --selector  <body>
+browse-messages --queue  DEV.QUEUE.1  --selector 
+// [failed] browse-messages --queue  DEV.QUEUE.1  --selector jms-message
+browse-messages --queue  DEV.QUEUE.1  
+exit
+// AmazonMQ CLI 1.2.0.RELEASE log closed at 2022-02-03 06:08:10
+// AmazonMQ CLI 1.2.0.RELEASE log opened at 2022-02-03 06:16:14
+ connect --broker my-aws-broker
+list-queue
+browse-messages --queue  DEV.QUEUE.1
+exit
+// AmazonMQ CLI 1.2.0.RELEASE log closed at 2022-02-03 06:17:38
